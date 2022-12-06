@@ -32,7 +32,7 @@ To Install:
 from __future__ import print_function
 
 __title__ =  "Copy Directory List to Clipboard"
-__version_info__ = (0, 0, 1)
+__version_info__ = (0, 1, 0)
 __version__ = ".".join([str(num) for num in __version_info__])
 __title_version__ = "{} v{}".format(__title__, __version__)
 
@@ -89,12 +89,12 @@ def gather_listings(selection, sort):
             listing.sort(key=lambda f: os.path.getmtime(os.path.join(folder.path, f)))
 
         results += "\n".join(listing)
-        results += "\n"
 
     return results
 
 
 def dir_listing_to_clipboard(selection):
+    """Copy directory listing sorted by name to system clipboard."""
 
     results = gather_listings(selection, sort = "name")
     copy_to_clipboard(results)
@@ -102,6 +102,7 @@ def dir_listing_to_clipboard(selection):
 
 
 def dir_listing_by_date_to_clipboard(selection):
+    """Copy directory listing sorted by date to the system clipboard."""
 
     results = gather_listings(selection, sort = "date")
     copy_to_clipboard(results)
