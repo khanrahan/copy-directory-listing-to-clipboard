@@ -31,7 +31,7 @@ To Install:
 __title__ = 'Copy Directory List to Clipboard'
 __version_info__ = (0, 1, 0, 'dev')
 __version__ = '.'.join([str(num) for num in __version_info__])
-__title_version__ = '{} v{}'.format(__title__, __version__)
+__title_version__ = f'{__title__} v{__version__}'
 
 MESSAGE_PREFIX = '[PYTHON HOOK]'
 
@@ -62,7 +62,7 @@ def gather_listings(selection, sort):
     import os
 
     message(__title_version__)
-    message('Script called from {}'.format(__file__))
+    message(f'Script called from {__file__}')
 
     results = ''
 
@@ -74,7 +74,7 @@ def gather_listings(selection, sort):
         results += '\n'
 
         listing = dir_listing(folder.path)
-        message('Added listing of {}'.format(folder.path))
+        message(f'Added listing of {folder.path}')
 
         if sort == 'name':
             listing.sort()
