@@ -38,13 +38,11 @@ MESSAGE_PREFIX = '[PYTHON HOOK]'
 
 def message(string):
     """Print message to shell window and append global MESSAGE_PREFIX."""
-
     print(' '.join([MESSAGE_PREFIX, string]))
 
 
 def copy_to_clipboard(text):
     """Self explanitory.  Only takes a string."""
-
     from PySide2 import QtWidgets
 
     qt_app_instance = QtWidgets.QApplication.instance()
@@ -53,7 +51,6 @@ def copy_to_clipboard(text):
 
 def dir_listing(path):
     """returns a list of a directory's files"""
-
     import os
 
     dir_list = [f for f in os.walk(path).next()[2] if not f[0] == '.']
@@ -63,7 +60,6 @@ def dir_listing(path):
 
 def gather_listings(selection, sort):
     """Directory listing sorted alphabetically and copy it to the clipboard."""
-
     import os
 
     message(__title_version__)
@@ -93,7 +89,6 @@ def gather_listings(selection, sort):
 
 def dir_listing_to_clipboard(selection):
     """Copy directory listing sorted by name to system clipboard."""
-
     results = gather_listings(selection, sort='name')
     copy_to_clipboard(results)
     message('Copied to clipboard!')
@@ -101,7 +96,6 @@ def dir_listing_to_clipboard(selection):
 
 def dir_listing_by_date_to_clipboard(selection):
     """Copy directory listing sorted by date to the system clipboard."""
-
     results = gather_listings(selection, sort='date')
     copy_to_clipboard(results)
     message('Copied to clipboard!')
@@ -109,7 +103,6 @@ def dir_listing_by_date_to_clipboard(selection):
 
 def scope_folders(selection):
     """Determine if selection is a folder in the Media Hub > Files tab."""
-
     for item in selection:
         if 'FilesFolder' in str(item):
             return True
@@ -117,7 +110,6 @@ def scope_folders(selection):
 
 
 def get_mediahub_files_custom_ui_actions():
-
     return [{'name': 'Copy...',
              'actions': [{'name': 'Directory Listing (by Date) to Clipboard',
                            'isVisible': scope_folders,
