@@ -78,7 +78,7 @@ def gather_listings(selection, sort):
         message(f'Added listing of {folder.path}')
 
         if sort == 'name':
-            listing.sort()
+            listing.sort(key=str.lower)
         if sort == 'date':
             listing.sort(key=lambda f, fp=folder.path: get_modification_time(fp, f))
         results += '\n'.join(listing)
