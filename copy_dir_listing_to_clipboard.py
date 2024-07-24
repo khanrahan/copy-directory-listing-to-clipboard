@@ -37,6 +37,7 @@ VERSION = '.'.join([str(num) for num in VERSION_INFO])
 TITLE_VERSION = f'{TITLE} v{VERSION}'
 MESSAGE_PREFIX = '[PYTHON]'
 
+
 def message(string):
     """Print message to shell window and append global MESSAGE_PREFIX."""
     print(' '.join([MESSAGE_PREFIX, string]))
@@ -110,9 +111,11 @@ def get_mediahub_files_custom_ui_actions():
              'actions': [{'name': 'Directory Listing (by Date) to Clipboard',
                            'isVisible': scope_folders,
                            'execute': dir_listing_by_date_to_clipboard,
+                           'maximumVersion': '2024.9.9.9',
                            'minimumVersion': '2022'},
                           {'name': 'Directory Listing (by Name) to Clipboard',
                            'isVisible': scope_folders,
                            'execute': dir_listing_to_clipboard,
+                           'maximumVersion': '2024.9.9.9',
                            'minimumVersion': '2022'}]
            }]
