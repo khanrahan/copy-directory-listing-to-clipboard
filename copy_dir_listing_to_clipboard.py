@@ -29,7 +29,7 @@ To Install:
 
 from __future__ import print_function
 
-__title__ =  'Copy Directory List to Clipboard'
+__title__ = 'Copy Directory List to Clipboard'
 __version_info__ = (0, 1, 0, 'dev')
 __version__ = '.'.join([str(num) for num in __version_info__])
 __title_version__ = '{} v{}'.format(__title__, __version__)
@@ -94,7 +94,7 @@ def gather_listings(selection, sort):
 def dir_listing_to_clipboard(selection):
     """Copy directory listing sorted by name to system clipboard."""
 
-    results = gather_listings(selection, sort = 'name')
+    results = gather_listings(selection, sort='name')
     copy_to_clipboard(results)
     message('Copied to clipboard!')
 
@@ -102,7 +102,7 @@ def dir_listing_to_clipboard(selection):
 def dir_listing_by_date_to_clipboard(selection):
     """Copy directory listing sorted by date to the system clipboard."""
 
-    results = gather_listings(selection, sort = 'date')
+    results = gather_listings(selection, sort='date')
     copy_to_clipboard(results)
     message('Copied to clipboard!')
 
@@ -118,8 +118,8 @@ def scope_folders(selection):
 
 def get_mediahub_files_custom_ui_actions():
 
-    return [{'name' : 'Copy...',
-             'actions' : [{'name': 'Directory Listing (by Date) to Clipboard',
+    return [{'name': 'Copy...',
+             'actions': [{'name': 'Directory Listing (by Date) to Clipboard',
                            'isVisible': scope_folders,
                            'execute': dir_listing_by_date_to_clipboard,
                            'minimumVersion': '2020.3.1'},
