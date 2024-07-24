@@ -31,11 +31,10 @@ import os
 
 from PySide2 import QtWidgets
 
-__title__ = 'Copy Directory List to Clipboard'
-__version_info__ = (0, 1, 0, 'dev')
-__version__ = '.'.join([str(num) for num in __version_info__])
-__title_version__ = f'{__title__} v{__version__}'
-
+TITLE = 'Copy Directory List to Clipboard'
+VERSION_INFO = (0, 1, 0, 'dev')
+VERSION = '.'.join([str(num) for num in VERSION_INFO])
+TITLE_VERSION = f'{TITLE} v{VERSION}'
 MESSAGE_PREFIX = '[PYTHON HOOK]'
 
 def message(string):
@@ -62,7 +61,7 @@ def get_modification_time(folder_path, filename):
 
 def gather_listings(selection, sort):
     """Directory listing sorted alphabetically and copy it to the clipboard."""
-    message(__title_version__)
+    message(TITLE_VERSION)
     message(f'Script called from {__file__}')
 
     results = ''
