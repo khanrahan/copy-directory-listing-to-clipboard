@@ -27,7 +27,6 @@ To Install:
     /opt/Autodesk/user/<user name>/python
 """
 
-from __future__ import print_function
 
 __title__ = 'Copy Directory List to Clipboard'
 __version_info__ = (0, 1, 0, 'dev')
