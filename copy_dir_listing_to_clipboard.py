@@ -110,9 +110,9 @@ def get_mediahub_files_custom_ui_actions():
              'actions': [{'name': 'Directory Listing (by Date) to Clipboard',
                            'isVisible': scope_folders,
                            'execute': dir_listing_by_date_to_clipboard,
-                           'minimumVersion': '2020.3.1'},
+                           'minimumVersion': '2022'},
                           {'name': 'Directory Listing (by Name) to Clipboard',
                            'isVisible': scope_folders,
                            'execute': dir_listing_to_clipboard,
-                           'minimumVersion': '2020.3.1'}]
+                           'minimumVersion': '2022'}]
            }]
