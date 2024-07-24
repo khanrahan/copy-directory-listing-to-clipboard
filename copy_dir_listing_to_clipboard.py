@@ -27,6 +27,9 @@ To Install:
     /opt/Autodesk/user/<user name>/python
 """
 
+import os
+
+from PySide2 import QtWidgets
 
 __title__ = 'Copy Directory List to Clipboard'
 __version_info__ = (0, 1, 0, 'dev')
@@ -42,25 +45,18 @@ def message(string):
 
 def copy_to_clipboard(text):
     """Self explanitory.  Only takes a string."""
-    from PySide2 import QtWidgets
-
     qt_app_instance = QtWidgets.QApplication.instance()
     qt_app_instance.clipboard().setText(text)
 
 
 def dir_listing(path):
     """Returns a list of a directory's files."""
-    import os
-
     dir_list = [f for f in os.walk(path).next()[2] if f[0] != '.']
-
     return dir_list
 
 
 def gather_listings(selection, sort):
     """Directory listing sorted alphabetically and copy it to the clipboard."""
-    import os
-
     message(__title_version__)
     message(f'Script called from {__file__}')
 
