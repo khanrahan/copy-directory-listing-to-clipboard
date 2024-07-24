@@ -7,8 +7,8 @@ Flame Version: 2022
 
 URL: http://github.com/khanrahan/copy-dir-listing-to-clipboard
 
-Creation Date: 01.12.24
-Update Date: 01.12.24
+Creation Date: 11.01.22
+Update Date: 07.24.24
 
 Description:
 
@@ -37,7 +37,7 @@ import os
 from PySide2 import QtWidgets
 
 TITLE = 'Copy Directory List to Clipboard'
-VERSION_INFO = (0, 1, 0, 'dev')
+VERSION_INFO = (1, 0, 0)
 VERSION = '.'.join([str(num) for num in VERSION_INFO])
 TITLE_VERSION = f'{TITLE} v{VERSION}'
 MESSAGE_PREFIX = '[PYTHON]'
