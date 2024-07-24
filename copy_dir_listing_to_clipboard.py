@@ -51,7 +51,7 @@ def copy_to_clipboard(text):
 
 def dir_listing(path):
     """Returns a list of a directory's files."""
-    dir_list = [f for f in os.walk(path).next()[2] if f[0] != '.']
+    dir_list = [f for f in next(os.walk(path))[2] if f[0] != '.']
     return dir_list
 
 
