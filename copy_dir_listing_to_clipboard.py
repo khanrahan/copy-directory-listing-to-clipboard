@@ -103,10 +103,7 @@ def dir_listing_by_date_to_clipboard(selection):
 
 def scope_folders(selection):
     """Determine if selection is a folder in the Media Hub > Files tab."""
-    for item in selection:
-        if 'FilesFolder' in str(item):
-            return True
-    return False
+    return any('FilesFolder' in str(item) for item in selection)
 
 
 def get_mediahub_files_custom_ui_actions():
