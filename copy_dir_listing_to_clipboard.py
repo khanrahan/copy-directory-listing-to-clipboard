@@ -105,6 +105,7 @@ def scope_folders(selection):
 
 
 def get_mediahub_files_custom_ui_actions():
+    """Add right click menu items."""
     return [{'name': 'Copy...',
              'actions': [{'name': 'Directory Listing (by Date) to Clipboard',
                            'isVisible': scope_folders,
