@@ -35,7 +35,7 @@ TITLE = 'Copy Directory List to Clipboard'
 VERSION_INFO = (0, 1, 0, 'dev')
 VERSION = '.'.join([str(num) for num in VERSION_INFO])
 TITLE_VERSION = f'{TITLE} v{VERSION}'
-MESSAGE_PREFIX = '[PYTHON HOOK]'
+MESSAGE_PREFIX = '[PYTHON]'
 
 def message(string):
     """Print message to shell window and append global MESSAGE_PREFIX."""
