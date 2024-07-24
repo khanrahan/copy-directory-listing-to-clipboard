@@ -55,6 +55,11 @@ def dir_listing(path):
     return dir_list
 
 
+def get_modification_time(folder_path, filename):
+    """Return a file's last modification time."""
+    return os.path.getmtime(os.path.join(folder_path, filename))
+
+
 def gather_listings(selection, sort):
     """Directory listing sorted alphabetically and copy it to the clipboard."""
     message(__title_version__)
@@ -75,8 +80,7 @@ def gather_listings(selection, sort):
         if sort == 'name':
             listing.sort()
         if sort == 'date':
-            listing.sort(key=lambda f: os.path.getmtime(os.path.join(folder.path, f)))
-
+            listing.sort(key=lambda f, fp=folder.path: get_modification_time(fp, f))
         results += '\n'.join(listing)
 
     return results
