@@ -52,7 +52,7 @@ def dir_listing(path):
     """Returns a list of a directory's files."""
     import os
 
-    dir_list = [f for f in os.walk(path).next()[2] if not f[0] == '.']
+    dir_list = [f for f in os.walk(path).next()[2] if f[0] != '.']
 
     return dir_list
 
@@ -67,7 +67,7 @@ def gather_listings(selection, sort):
     results = ''
 
     for folder in selection:
-        if not len(results) == 0:
+        if len(results) != 0:
             results += '\n'  # separate from previous listing by 1 line
 
         results += folder.path
