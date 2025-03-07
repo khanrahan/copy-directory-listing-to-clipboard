@@ -97,6 +97,7 @@ def dir_listing_to_clipboard(selection):
     results = gather_listings(selection, sort='name')
     copy_to_clipboard(results)
     message('Copied to clipboard!')
+    message('Done!')
 
 
 def dir_listing_by_date_to_clipboard(selection):
@@ -104,6 +105,7 @@ def dir_listing_by_date_to_clipboard(selection):
     results = gather_listings(selection, sort='date')
     copy_to_clipboard(results)
     message('Copied to clipboard!')
+    message('Done!')
 
 
 def scope_folders(selection):
