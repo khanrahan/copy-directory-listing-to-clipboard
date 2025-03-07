@@ -8,7 +8,7 @@ Flame Version: 2022
 URL: http://github.com/khanrahan/copy-dir-listing-to-clipboard
 
 Creation Date: 11.01.22
-Update Date: 07.24.24
+Update Date: 03.06.25
 
 Description:
 
