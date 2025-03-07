@@ -34,6 +34,7 @@ To Install:
 
 import os
 
+import flame
 from PySide6 import QtWidgets
 
 TITLE = 'Copy Directory List to Clipboard'
@@ -107,7 +108,7 @@ def dir_listing_by_date_to_clipboard(selection):
 
 def scope_folders(selection):
     """Determine if selection is a folder in the Media Hub > Files tab."""
-    return all('FilesFolder' in str(item) for item in selection)
+    return all(isinstance(item, flame.PyMediaHubFilesFolder) for item in selection)
 
 
 def get_mediahub_files_custom_ui_actions():
