@@ -3,7 +3,7 @@ Script Name: Copy Directory Listing to Clipboard
 Written By: Kieran Hanrahan
 
 Script Version: 2.0.0
-Flame Version: 2022
+Flame Version: 2025
 
 URL: http://github.com/khanrahan/copy-dir-listing-to-clipboard
 
