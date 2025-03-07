@@ -34,7 +34,7 @@ To Install:
 
 import os
 
-from PySide2 import QtWidgets
+from PySide6 import QtWidgets
 
 TITLE = 'Copy Directory List to Clipboard'
 VERSION_INFO = (1, 0, 0)
@@ -116,11 +116,11 @@ def get_mediahub_files_custom_ui_actions():
              'actions': [{'name': 'Directory Listing (by Date) to Clipboard',
                            'isVisible': scope_folders,
                            'execute': dir_listing_by_date_to_clipboard,
-                           'maximumVersion': '2024.9.9.9',
-                           'minimumVersion': '2022'},
+                           'minimumVersion': '2025',
+                          },
                           {'name': 'Directory Listing (by Name) to Clipboard',
                            'isVisible': scope_folders,
                            'execute': dir_listing_to_clipboard,
-                           'maximumVersion': '2024.9.9.9',
-                           'minimumVersion': '2022'}]
+                           'minimumVersion': '2025',
+                           }]
            }]
