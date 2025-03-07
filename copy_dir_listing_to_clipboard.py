@@ -2,13 +2,13 @@
 Script Name: Copy Directory Listing to Clipboard
 Written By: Kieran Hanrahan
 
-Script Version: 1.0.0
-Flame Version: 2022
+Script Version: 2.0.0
+Flame Version: 2025
 
 URL: http://github.com/khanrahan/copy-dir-listing-to-clipboard
 
 Creation Date: 11.01.22
-Update Date: 07.24.24
+Update Date: 03.06.25
 
 Description:
 
@@ -26,18 +26,22 @@ Menus:
 To Install:
 
     For all users, copy this file to:
-    /opt/Autodesk/shared/python
+    /opt/Autodesk/shared/python/
 
-    For a specific user, copy this file to:
-    /opt/Autodesk/user/<user name>/python
+    For a specific user on Linux, copy this file to:
+    /home/<user_name>/flame/python/
+
+    For a specific user on Mac, copy this file to:
+    /Users/<user_name>/Library/Preferences/Autodesk/flame/python/
 """
 
 import os
 
-from PySide2 import QtWidgets
+import flame
+from PySide6 import QtWidgets
 
 TITLE = 'Copy Directory List to Clipboard'
-VERSION_INFO = (1, 0, 0)
+VERSION_INFO = (2, 0, 0)
 VERSION = '.'.join([str(num) for num in VERSION_INFO])
 TITLE_VERSION = f'{TITLE} v{VERSION}'
 MESSAGE_PREFIX = '[PYTHON]'
@@ -96,6 +100,7 @@ def dir_listing_to_clipboard(selection):
     results = gather_listings(selection, sort='name')
     copy_to_clipboard(results)
     message('Copied to clipboard!')
+    message('Done!')
 
 
 def dir_listing_by_date_to_clipboard(selection):
@@ -103,11 +108,12 @@ def dir_listing_by_date_to_clipboard(selection):
     results = gather_listings(selection, sort='date')
     copy_to_clipboard(results)
     message('Copied to clipboard!')
+    message('Done!')
 
 
 def scope_folders(selection):
     """Determine if selection is a folder in the Media Hub > Files tab."""
-    return any('FilesFolder' in str(item) for item in selection)
+    return all(isinstance(item, flame.PyMediaHubFilesFolder) for item in selection)
 
 
 def get_mediahub_files_custom_ui_actions():
@@ -116,11 +122,11 @@ def get_mediahub_files_custom_ui_actions():
              'actions': [{'name': 'Directory Listing (by Date) to Clipboard',
                            'isVisible': scope_folders,
                            'execute': dir_listing_by_date_to_clipboard,
-                           'maximumVersion': '2024.9.9.9',
-                           'minimumVersion': '2022'},
+                           'minimumVersion': '2025',
+                          },
                           {'name': 'Directory Listing (by Name) to Clipboard',
                            'isVisible': scope_folders,
                            'execute': dir_listing_to_clipboard,
-                           'maximumVersion': '2024.9.9.9',
-                           'minimumVersion': '2022'}]
+                           'minimumVersion': '2025',
+                           }]
            }]
