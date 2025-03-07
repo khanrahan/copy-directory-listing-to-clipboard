@@ -2,7 +2,7 @@
 Script Name: Copy Directory Listing to Clipboard
 Written By: Kieran Hanrahan
 
-Script Version: 1.0.0
+Script Version: 2.0.0
 Flame Version: 2022
 
 URL: http://github.com/khanrahan/copy-dir-listing-to-clipboard
@@ -38,7 +38,7 @@ import flame
 from PySide6 import QtWidgets
 
 TITLE = 'Copy Directory List to Clipboard'
-VERSION_INFO = (1, 0, 0)
+VERSION_INFO = (2, 0, 0)
 VERSION = '.'.join([str(num) for num in VERSION_INFO])
 TITLE_VERSION = f'{TITLE} v{VERSION}'
 MESSAGE_PREFIX = '[PYTHON]'
